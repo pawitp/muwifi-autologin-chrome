@@ -1,0 +1,29 @@
+{
+  "name": "MU-WiFi Autologin",
+  "version": "1.1",
+  "description": "Automatically login to MU-WiFi network at Mahidol University",
+  
+  "icons": {
+      "128": "icon128.png",
+      "48": "icon48.png"
+  },
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  "permissions": [
+      "webRequest", 
+      "webRequestBlocking", 
+      "http://*/upload/custom/default/login.html*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["https://securelogin.arubanetworks.com/upload/custom/default/login.html*"],
+      "js": ["jquery.min.js", "content.js"]
+    }
+  ],
+
+  "manifest_version": 2
+}
